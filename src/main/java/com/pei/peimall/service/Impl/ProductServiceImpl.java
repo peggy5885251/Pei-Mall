@@ -2,6 +2,7 @@ package com.pei.peimall.service.Impl;
 
 import com.pei.peimall.dao.Impl.ProductDaoImpl;
 import com.pei.peimall.dao.ProductDao;
+import com.pei.peimall.dto.ProductRequest;
 import com.pei.peimall.model.Product;
 import com.pei.peimall.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,5 +17,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product getProductById(Integer productId) {
         return productDao.getProductById(productId);
+
+    }
+
+    @Override
+    public Integer createProduct(ProductRequest productRequest) {
+        return productDao.createProduct(productRequest);
     }
 }
