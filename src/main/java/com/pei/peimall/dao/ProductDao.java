@@ -3,7 +3,11 @@ package com.pei.peimall.dao;
 import com.pei.peimall.dto.ProductRequest;
 import com.pei.peimall.model.Product;
 
+import java.util.List;
+
 public interface ProductDao {
+
+    List<Product> getProducts();
 
     Product getProductById(Integer productId);
 
