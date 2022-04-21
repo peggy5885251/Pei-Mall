@@ -1,5 +1,6 @@
 package com.pei.peimall.controller;
 
+import com.pei.peimall.constant.ProductCategory;
 import com.pei.peimall.dto.ProductRequest;
 import com.pei.peimall.model.Product;
 import com.pei.peimall.service.ProductService;
@@ -18,8 +19,11 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/products")
-    public ResponseEntity<List<Product>> getProducts(){
-        List<Product> productList = productService.getProducts();
+    public ResponseEntity<List<Product>> getProducts(
+            @RequestParam(required = false) ProductCategory category,
+            @RequestParam(required = false) String search
+    ){
+        List<Product> productList = productService.getProducts(category, search);
         return ResponseEntity.status(HttpStatus.OK).body(productList);
     }
     @GetMapping("/products/{productId}")
