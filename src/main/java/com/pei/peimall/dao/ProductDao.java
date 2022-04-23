@@ -1,6 +1,7 @@
 package com.pei.peimall.dao;
 
 import com.pei.peimall.constant.ProductCategory;
+import com.pei.peimall.dto.ProductQueryParams;
 import com.pei.peimall.dto.ProductRequest;
 import com.pei.peimall.model.Product;
 
@@ -8,7 +9,7 @@ import java.util.List;
 
 public interface ProductDao {
 
-    List<Product> getProducts(ProductCategory category, String search);
+    List<Product> getProducts(ProductQueryParams productQueryParams);
 
     Product getProductById(Integer productId);
 

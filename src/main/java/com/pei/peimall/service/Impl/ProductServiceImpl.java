@@ -1,8 +1,8 @@
 package com.pei.peimall.service.Impl;
 
-import com.pei.peimall.constant.ProductCategory;
-import com.pei.peimall.dao.Impl.ProductDaoImpl;
+
 import com.pei.peimall.dao.ProductDao;
+import com.pei.peimall.dto.ProductQueryParams;
 import com.pei.peimall.dto.ProductRequest;
 import com.pei.peimall.model.Product;
 import com.pei.peimall.service.ProductService;
@@ -18,8 +18,8 @@ public class ProductServiceImpl implements ProductService {
     private ProductDao productDao;
 
     @Override
-    public List<Product> getProducts(ProductCategory category, String search) {
-        return productDao.getProducts(category, search);
+    public List<Product> getProducts(ProductQueryParams productQueryParams) {
+        return productDao.getProducts(productQueryParams);
     }
 
     @Override

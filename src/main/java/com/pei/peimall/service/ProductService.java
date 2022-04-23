@@ -1,15 +1,14 @@
 package com.pei.peimall.service;
 
-import com.pei.peimall.constant.ProductCategory;
+import com.pei.peimall.dto.ProductQueryParams;
 import com.pei.peimall.dto.ProductRequest;
 import com.pei.peimall.model.Product;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 public interface ProductService {
 
-    List<Product> getProducts(ProductCategory category, String search);
+    List<Product> getProducts(ProductQueryParams productQueryParams);
 
     Product getProductById(Integer productId);
 
@@ -19,3 +18,4 @@ public interface ProductService {
 
     void deleteProductById(Integer productId);
 }
+
