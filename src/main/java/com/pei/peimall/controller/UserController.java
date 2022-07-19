@@ -1,5 +1,6 @@
 package com.pei.peimall.controller;
 
+import com.pei.peimall.dto.UserLoginRequest;
 import com.pei.peimall.dto.UserRegisterRequest;
 import com.pei.peimall.model.User;
 import com.pei.peimall.service.UserService;
@@ -23,5 +24,11 @@ public class UserController {
         Integer userId = userService.register(userRegisterRequest);
         User user = userService.getUserById(userId);
         return ResponseEntity.status(HttpStatus.CREATED).body(user);
+    }
+
+    @PostMapping("/users/login")
+    public ResponseEntity<User> login(@RequestBody @Valid UserLoginRequest userLoginRequest){
+        User user = userService.login(userLoginRequest);
+        return ResponseEntity.status(HttpStatus.OK).body(user);
     }
 }
